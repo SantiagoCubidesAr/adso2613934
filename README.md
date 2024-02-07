@@ -1,13 +1,12 @@
 # adso2613934
----
 
 ## TGO en Análisis y Desarrollo de software
 
-**Lista de Temas** público
-
-| Temas | Tipo |
+| Temas | Descripción |
 |---------|-------|
-|1. PHP |C |
-|2. POO|B |
+|1. POO | PHP Orientado a Objetos |
+|2. PDO | Objetos de Datos en PHP |
+|3. MVC | Modelo Vista Controlador en PHP |
+|4. Laravel | Framework en PHP |
 
-![Hollow](http://tinyurl.com/en2vdxr4)
+![Hollow](http://tinyurl.com/pnn2eaz8)
