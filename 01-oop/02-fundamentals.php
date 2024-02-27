@@ -62,9 +62,7 @@
     <main>
         <h1>02- Fundamentals</h1>
         <section>
-            <img height="" src="" alt="">
-            <?php
-                
+            <?php  
                 class Runner {
                     // Attributes
                     public $name;
@@ -91,8 +89,7 @@
                     }
                 }
 
-                $runner = new Runner('Usain Bolt', 35, 105);
-
+                $runner = new Runner('Sonic', 35, 105);
             ?>
             <h2>Class Runner</h2>
             <ul>
