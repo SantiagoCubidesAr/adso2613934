@@ -77,15 +77,15 @@
                     }
 
                     public function run() {
-                        return '<img height="200px" width="200px" src="./sonic-run.gif" alt="">';
+                        return '<img height="200px" width="200px" src="./img/sonic-run.gif" alt="">';
                     }
 
                     public function stop() {
-                        return '<img height="200px" width="200px" src="./sonic-stop.gif" alt="">';
+                        return '<img height="200px" width="200px" src="./img/sonic-stop.gif" alt="">';
                     }
 
                     public function jump() {
-                        return '<img height="200px" width="200px" src="./sonic-rodando.gif" alt="">';
+                        return '<img height="200px" width="200px" src="./img/sonic-rodando.gif" alt="">';
                     }
                 }
 
@@ -107,6 +107,8 @@
                         } else {
                             echo $runner->jump();
                         }
+                    } else {
+                        echo $runner->stop();
                     }
                     
                 ?>
