@@ -19,6 +19,17 @@
             h2 {
                 margin: 0;
             }
+
+            button {
+                    background-color: #0004ff;
+                    border: 2px solid #fff6;
+                    border-radius: 8px;
+                    color: #fff9;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    width: 300px;
+                    padding: 1rem;
+                }
         }
     </style>
 </head>
@@ -35,48 +46,61 @@
         <h1>04-Inheritance</h1>
         <section>
             <h2>Evolve your Pokemon</h2>
+            <form action="" method="post">
+                <button name="atacar">Atacar</button>
+                <button name="defender">Defender</button>
+                <button name="evolucionar">Evolucionar</button>
+            </form>
             <?php
                 class Pokemon {
                     protected $name;
                     protected $type;
                     protected $healt;
+                    protected $img;
                     //protected $image;
 
-                    public function __construct($name, $type, $healt) {
+                    public function __construct($name, $type, $healt, $img) {
                         $this->name = $name;
                         $this->type = $type;
                         $this->healt = $healt;
+                        $this->img = $img;
                     }
 
                     public function attack() {
-                        return "Attack";
+                        $mes = $this->name." ataca".$this->img;
+                        return $mes;
                     }
 
                     public function defense() {
-                        return "Defense";
+                        $mes = $this->name." se defiende".$this->img;
+                        return $mes;
                     }
 
                     public function show() {
-                        return $this->name."  ".$this->type." ".$this->healt."\n";
+                        return "Evoluciona a ".$this->name." ".$this->type." ".$this->healt.$this->img."<br/>";
                     }
                 }
 
                 class Evolve extends Pokemon {
-                    public function levelUp($name, $type, $healt) {
+                    public function levelUp($name, $type, $healt, $img) {
                         $this->name = $name;
                         $this->type = $type;
-                        $this->healt = $healt;;
+                        $this->healt = $healt;
+                        $this->img = $img;
                     }
                 }
 
-                $pk = new Evolve('Eevee', 'Normal', 100);
-                echo $pk->attack();
-                echo $pk->defense();
-                echo $pk->show();
-                $pk->levelUp('Umbreon', 'Siniestro', 200);
-                echo $pk->show();
-                $pk->levelUp('Espeon', 'Siniestro', 300);
-                echo $pk->show();
+                $pk = new Pokemon('Abra', 'Psíquico', 100, '<img height="200px" width="200px" src="./img/Abra.png" alt="">');
+                if ($_POST) {
+                    if (isset($_POST['atacar'])) {
+                        echo $pk->attack();
+                    } elseif (isset($_POST['defender'])) {
+                        echo $pk->defense();
+                    } else {
+                        $pk = new Evolve('Kadabra', 'Psíquico', 200, '<img height="200px" width="200px" src="./img/Kadabra.png" alt="">');
+                        echo $pk->show();
+                    }
+                }
             ?>
         </section>
     </main>
