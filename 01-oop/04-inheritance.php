@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>03-Visibility</title>
+    <title>04-Inheritance</title>
     <link rel="stylesheet" href="css/master.css">
     <style>
         section {
@@ -83,13 +83,32 @@
 
                 class Evolve extends Pokemon {
                     public function levelUp($name, $type, $healt, $img) {
-                        $this->name = $name;
-                        $this->type = $type;
-                        $this->healt = $healt;
-                        $this->img = $img;
+                        parent::__construct($name, $type, $healt, $img);
                     }
                 }
+                $pokemonos = array(	
+	
+                    '1' => array(
+                        'nombre' => "Abra",
+                        'tipo'  => "Psíquico",
+                        'vida'  => 100,
+                        'imagen' => '<img height="200px" width="200px" src="./img/Abra.png" alt="">'
+                    ),
+                    
+                    '2' => array(
+                        'nombre' => "Kadabra",
+                        'tipo'  => "Psíquico",
+                        'vida'  => 200,
+                        'imagen' => '<img height="200px" width="200px" src="./img/Kadabra.png" alt="">'
+                    ),
 
+                    '3' => array(
+                        'nombre' => "Alakazam",
+                        'tipo'  => "Psíquico",
+                        'vida'  => 300,
+                        'imagen' => '<img height="200px" width="200px" src="./img/Alakazam.png" alt="">'
+                    )
+                );
                 $pk = new Pokemon('Abra', 'Psíquico', 100, '<img height="200px" width="200px" src="./img/Abra.png" alt="">');
                 if ($_POST) {
                     if (isset($_POST['atacar'])) {
@@ -100,6 +119,8 @@
                         $pk = new Evolve('Kadabra', 'Psíquico', 200, '<img height="200px" width="200px" src="./img/Kadabra.png" alt="">');
                         echo $pk->show();
                     }
+                } else {
+                   echo $pk->show();
                 }
             ?>
         </section>
