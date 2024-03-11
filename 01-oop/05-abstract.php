@@ -15,21 +15,16 @@
             align-items: center;
             gap: 1rem;
             padding: 10px;
+            font-size: 20px;
 
             h2 {
                 margin: 0;
             }
 
-            button {
-                    background-color: #0004ff;
-                    border: 2px solid #fff6;
-                    border-radius: 8px;
-                    color: #fff9;
-                    cursor: pointer;
-                    font-size: 1rem;
-                    width: 300px;
-                    padding: 1rem;
-                }
+            td {
+                padding: 10px;
+            }
+            
         }
     </style>
 </head>
@@ -45,40 +40,73 @@
     <main>
         <h1>05-Abstract</h1>
         <section>
-            <?php 
-                abstract class DataBase {
-                    protected $host;
-                    protected $user;
-                    protected $pass;
-                    protected $dbname;
-                    protected $conx;
+            <?php
+            abstract class DataBase
+            {
+                protected $host;
+                protected $user;
+                protected $pass;
+                protected $dbname;
+                protected $conx;
+                protected $query;
 
-                    public function __construct($dbname, $host="localhost", $user="root", $pass="") {
-                        $this->host = $host;
-                        $this->user = $user;
-                        $this->pass = $pass;
-                        $this->dbname = $dbname;
-                    }
+                public function __construct($dbname, $host = "localhost", $user = "root", $pass = "")
+                {
+                    $this->host = $host;
+                    $this->user = $user;
+                    $this->pass = $pass;
+                    $this->dbname = $dbname;
+                }
 
-                    public function connect() {
-                        try {
-                            $this->conx = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pass);
-                            if ($this->conx) {
-                                echo "👵";
-                            }
-                        } catch (PDOException $e) {
-                            echo "Error: " . $e->getMessage();
-                        }
-                        
+                public function connect()
+                {
+                    try {
+                        $this->conx = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->user, $this->pass);
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
                     }
                 }
 
-                class Pokemon extends DataBase {
-
+                public function query($sql)
+                {
+                    return $this->conx->query($sql);
                 }
+            }
 
-                $db = new Pokemon('adso2613934');
-                $db->connect();
+            class Pokemon extends DataBase
+            {
+            }
+
+            $db = new Pokemon('adso2613934');
+            $db->connect();
+
+            $query = $db->query("SELECT * FROM pokemons");
+
+            // Verificar si hay resultados
+            if ($query->rowCount() > 0) {
+                // Iterar sobre los resultados y mostrarlos
+                echo "
+                <table>
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Health</th>
+                    <th>Image</th>
+                    </r>
+                </thead>";
+                while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<tr>";
+                    echo "<td><h2>{$row['name']}</h2></td>";
+                    echo "<td><p>{$row['type']}</p></td>";
+                    echo "<td><p>{$row['health']}</p></td>";
+                    echo "<td><img src='img/{$row['image']}' width='100px' height='100px' alt='{$row['name']}'></td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "No se encontraron Pokémon en la base de datos.";
+            }
             ?>
         </section>
     </main>
