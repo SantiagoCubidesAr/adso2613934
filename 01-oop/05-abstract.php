@@ -23,8 +23,7 @@
 
             td {
                 padding: 10px;
-            }
-            
+            }  
         }
     </style>
 </head>
@@ -93,14 +92,14 @@
                     <th>Type</th>
                     <th>Health</th>
                     <th>Image</th>
-                    </r>
+                    </tr>
                 </thead>";
                 while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
-                    echo "<td><h2>{$row['name']}</h2></td>";
+                    echo "<td><h3>{$row['name']}</h3></td>";
                     echo "<td><p>{$row['type']}</p></td>";
                     echo "<td><p>{$row['health']}</p></td>";
-                    echo "<td><img src='img/{$row['image']}' width='100px' height='100px' alt='{$row['name']}'></td>";
+                    echo "<td><img src='img/{$row['image']}' width='80px' height='80px' alt='{$row['name']}'></td>";
                     echo "</tr>";
                 }
                 echo "</table>";
