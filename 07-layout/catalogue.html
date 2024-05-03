@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CobuGame - Welcome</title>
+    <title>CuboGame - Catalogue</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/master.css">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <main class="welcome">
+    <main class="catalogue">
         <header>
             <img src="images/Logo-Welcome.png" alt="Logo">
         </header>
@@ -22,11 +22,11 @@
             <img src="images/Img-Welcome-2.png" alt="slide02">
             <img src="images/Img-Welcome-3.png" alt="slide03">
         </section>
-        <footer>
-            <a href="catalogue.html" class="btn btn-explore">
-                <img src="images/content-btn-welcome.png" alt="Explore">
-            </a>
-        </footer>
+        <section class="owl-carousel owl-theme">
+            <img src="images/Image-Welcome.png" alt="slide01">
+            <img src="images/Img-Welcome-2.png" alt="slide02">
+            <img src="images/Img-Welcome-3.png" alt="slide03">
+        </section>
     </main>
 
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -35,10 +35,10 @@
         $(document).ready(function () {
             $('.owl-carousel').owlCarousel({
                 loop: true,
-                margin: 10,
+                margin: 0,
                 responsive: {
                     0: {
-                        items: 1
+                        items: 2
                     }
                 }
             })
