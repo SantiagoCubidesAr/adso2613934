@@ -35,6 +35,27 @@ body {
     min-height: 100vh;
 
     main {
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            a:is(:link, :visited) {
+                background: url(../images/Btn-Inicio.png) no-repeat center;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: -2rem;
+                transition: all 0.2s ease-in;
+                width: 300px;
+            }
+    
+            a:is(:hover) {
+                background: url(../images/btn-hover.png) no-repeat center;
+                transform: scale(1.02) translate(-5px);
+            }
+        }
         background: url(../images/bg.image.png) no-repeat center;
         height: 800px;
         overflow: hidden;
@@ -42,6 +63,10 @@ body {
         width: 400px;
 
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-block: 1.5rem;
             position: relative;
             z-index: 3;
 
@@ -240,40 +265,13 @@ main.welcome {
         }
     }
 
-    footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        a:is(:link, :visited) {
-            background: url(../images/Btn-Inicio.png) no-repeat center;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: -2rem;
-            transition: all 0.2s ease-in;
-            width: 300px;
-        }
-
-        a:is(:hover) {
-            background: url(../images/btn-hover.png) no-repeat center;
-            transform: scale(1.02) translate(-5px);
-        }
-    }
+    
 }
 
 /* - - - - - - - - - - - - - - - - - - - - */
 /* 01 - C A T A L O G U E*/
 /* - - - - - - - - - - - - - - - - - - - - */
 main.catalogue {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-block: 1.5rem;
-    }
-
     section.scroll {
         scrollbar-width: none;
         overflow-y: scroll;
@@ -392,6 +390,51 @@ main.catalogue {
 
             button.owl-next:hover {
                 transform: scale(1) translateX(4px);
+            }
+        }
+    }
+}
+
+main.view-game {
+    header {
+        margin-bottom: 1rem;
+        h1 {
+            font-family: var(--ff-heading);
+            font-size: 36px;
+            color: var(--color-fourth);
+        }
+    }
+    section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2.5rem;
+        justify-content: center;
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            width: 300px;
+            div.row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                div.column {
+                    h4 {
+                        font-family: var(--ff-heading);
+                        color: var(--color-fourth);
+                        font-size: 20px;
+                    }
+                    p {
+                        font-family: var(--ff-body);
+                        color: var(--color-second);
+                        font-size: 16px;
+                        text-align: justify;
+                        &.price {
+                            font-size: 36px;
+                        }
+                    }
+                }
             }
         }
     }
