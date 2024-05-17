@@ -34,6 +34,11 @@ body {
     align-items: center;
     min-height: 100vh;
     main {
+        section.scroll {
+            scrollbar-width: none;
+            overflow-y: scroll;
+            height: 600px;
+        }
         footer {
             display: flex;
             justify-content: center;
@@ -272,9 +277,7 @@ main.welcome {
 /* - - - - - - - - - - - - - - - - - - - - */
 main.catalogue {
     section.scroll {
-        scrollbar-width: none;
-        overflow-y: scroll;
-        height: 600px;
+        
 
         form {
             display: flex;
