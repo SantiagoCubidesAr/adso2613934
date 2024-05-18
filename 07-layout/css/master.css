@@ -37,7 +37,7 @@ body {
         section.scroll {
             scrollbar-width: none;
             overflow-y: scroll;
-            height: 600px;
+            height: 620px;
         }
         footer {
             display: flex;
@@ -467,7 +467,7 @@ main.register{
                 width: 348px;
                 label {
                     display: flex;
-                    color: var(--color-third);
+                    color: var(--color-fourth);
                     font-family: var(--ff-heading);
                     gap: 0.6rem;
                     font-size: 20px;
@@ -478,12 +478,12 @@ main.register{
                     outline: none;
                     font-size: 18px;
                     font-weight: 300;
-                    color: var(--color-fourth);
+                    color: var(--color-third);
                     text-indent: 1rem;
                     height: 65px;
                     width: 344px;
                     &::placeholder {
-                        color: var(--color-fourth);
+                        color: var(--color-third);
                         opacity: 0.6;
                     }
                 }
@@ -516,13 +516,22 @@ main.register{
                     justify-content: center;
                 }
                 .mask {
-                    mask-image: url(../images/shape-photo.svg) no-repeat;
+                    mask-image: url(../images/shape-photo.svg);
                     mask-repeat: no-repeat;
                     mask-position: center top;
-                    object-fit: contain;
+                    object-fit: cover;
                     align-self: center;
-                    height: 250px;
-                    width: 250px;
+                    height: 208px;
+                    width: 208px;
+                }
+                .border {
+                    cursor: pointer;
+                    position: absolute;
+                    top: -35px;
+                    left: 35px;
+                }
+                #photo {
+                    display: none;
                 }
             }
         }

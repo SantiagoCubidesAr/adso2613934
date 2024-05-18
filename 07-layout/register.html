@@ -47,7 +47,9 @@
         <section class="scroll">
             <form action="dashboard.html" method="get">
                 <div class="form-group">
-                    <img class="mask" src="images/bg-svg-mask.svg" alt="">
+                    <img id="upload" class="mask" src="images/upload-photo.svg" alt="">
+                    <img  class="border" src="images/border-photo.svg" alt="">
+                    <input id="photo" type="file" name="photo" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label>
@@ -104,6 +106,18 @@
                 !$togglePass ? $(this).attr('src', 'images/ico-eye-hidden.svg')
                             : $(this).attr('src', 'images/ico-eye.svg')
                 $togglePass = !$togglePass
+            })
+
+            $('.border').click(function (e) {
+                $('#photo').click()
+            })
+            $('#photo').change(function (e) {
+                e.preventDefault()
+                let reader = new FileReader()
+                reader.onload = function(evt) {
+                    $('#upload').attr('src', event.target.result)
+                }
+                reader.readAsDataURL(this.files[0])
             })
         })
     </script>
