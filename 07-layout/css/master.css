@@ -537,3 +537,167 @@ main.register{
         }
     }
 }
+/* - - - - - - - - - - - - - - - - - - - - */
+/* 01 - D A S H B O A R D*/
+/* - - - - - - - - - - - - - - - - - - - - */
+main.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    menu {
+        div.hamburguer{
+        .mask {
+            mask-image: url(../images/shape-photo.svg);
+            mask-repeat: no-repeat;
+            mask-position: center top;
+            object-fit: cover;
+            align-self: center;
+            height: 208px;
+            width: 208px;
+        }
+        .border {
+            cursor: pointer;
+            position: absolute;
+        }
+        #photo {
+            display: none;
+        }
+    }
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        article.module {
+            background: url(../images/Module-Users.svg) no-repeat center;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            gap: 0.6rem;
+            height: 175px;
+            width: 348px;
+            aside {
+                padding-left: 1.4rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                img.icon {
+                    width: 92px;
+                }
+                span {
+                    font-size: 24px;
+                    color: var(--color-fourth);
+                }
+            }
+            img.title {
+                width: 200px;
+            }
+            a:is(:link, :visited) {
+                position: absolute;
+                bottom: 10px;
+                right: 20px;
+            }
+            a:is(:hover) {
+                background: url(../images/btn-enter-hover.svg) no-repeat center;
+                transform: scale(1.02) translateY(-4px);
+            }
+        }
+    }
+}
+/* - - - - - - - - - - - - - - - - - - - - */
+/* 01 - M Y P R O F I L E*/
+/* - - - - - - - - - - - - - - - - - - - - */
+main.myprofile{
+    header {
+        .btn-back {
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+    section {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            div.form-group {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                gap: 0.6rem;
+                flex-direction: column;
+                width: 348px;
+                label {
+                    display: flex;
+                    color: var(--color-fourth);
+                    font-family: var(--ff-heading);
+                    gap: 0.6rem;
+                    font-size: 20px;
+                }
+                input {
+                    border: none;
+                    background: url(../images/input-login.png) no-repeat center;
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: var(--color-third);
+                    text-indent: 1rem;
+                    height: 65px;
+                    width: 344px;
+                    &::placeholder {
+                        color: var(--color-third);
+                        opacity: 0.6;
+                    }
+                }
+                img.ico-eye {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 60px;
+                    right: 20px;
+                }
+                button {
+                    background: url(../images/Btn-Inicio.png) no-repeat center;
+                    height: 65px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    margin-top: 2rem;
+                    transition: all 0.2s ease-in;
+                    width: 348px;
+                    cursor: pointer;
+                }
+        
+                button:is(:hover) {
+                    background: url(../images/btn-hover.png) no-repeat center;
+                    transform: scale(1.02) translate(-5px);
+                }
+                a:is(:link, :visited) {
+                    color: var(--color-third);
+                    font-size: 16px;
+                    justify-content: center;
+                }
+                .mask {
+                    mask-image: url(../images/shape-photo.svg);
+                    mask-repeat: no-repeat;
+                    mask-position: center top;
+                    object-fit: cover;
+                    align-self: center;
+                    height: 208px;
+                    width: 208px;
+                }
+                .border {
+                    cursor: pointer;
+                    position: absolute;
+                    top: -35px;
+                    left: 35px;
+                }
+                #photo {
+                    display: none;
+                }
+            }
+        }
+    }
+}
