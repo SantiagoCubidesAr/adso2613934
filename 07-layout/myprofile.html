@@ -1,116 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CuboGame - Login</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/master.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/master.css" />
+  </head>
+  <body>
     <main class="myprofile">
-        <header>
-            <img src="images/title-myprofile.svg" alt="">
-            <svg class="btn-burger" viewBox="0 0 100 100" width="80">
-                <path
-                    class="line top"
-                    d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
-                <path
-                    class="line middle"
-                    d="m 70,50 h -40" />
-                <path
-                    class="line bottom"
-                    d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
-            </svg>
-        </header>
-        <nav class="nav">
-            <menu>
-                <div class="hamburguer">
-                    <img id="upload" class="mask" src="images/upload-photo.svg" alt="">
-                    <img  class="border" src="images/border-photo.svg" alt="">
-                    <input id="photo" type="file" name="photo" accept="image/*">
-                </div>
-                <a href="myprofile.html">
-                    <img src="images/ico-profile.svg" alt="">
-                    My profile
-                </a>
-                <a href="dashboard.html">
-                    <img src="images/ico-dashboard.svg" alt="">
-                    Dashboard
-                </a>
-                <a href="catalogue.html">
-                    <img src="images/ico-logout.svg" alt="">
-                    Logout
-                </a>
-            </menu>
-        </nav>
-        <section class="scroll">
-            <form action="dashboard.html" method="get">
-                <div class="form-group">
-                    <img id="upload" class="mask" src="images/Image-Welcome.png" alt="">
-                    <img  class="border" src="images/border-photo.svg" alt="">
-                    <input id="photo" type="file" name="photo" accept="image/*">
-                </div>
-                <div class="form-group">
-                    <label>
-                        Fullname:
-                    </label>
-                    <input type="text" name="email" value="Alfonso" readonly>
-                </div>
-                <div class="form-group">
-                    <label>
-                        Email:
-                    </label>
-                    <input type="email" name="email" value="alfonso@gmail.com" readonly>
-                </div>
-                <div class="form-group">
-                    <label>
-                        Phone Number:
-                    </label>
-                    <input type="text" name="phone" value="3102457896" readonly>
-                </div>
-                <div class="form-group">
-                    <label>
-                        Birth Date:
-                    </label>
-                    <input type="text" name="birthdate" value="20/02/2025" readonly>
-                </div>
-            </form>
-        </section>
+      <header>
+        <img src="images/title-myprofile.svg" alt="" />
+        <svg class="btn-burger" viewBox="0 0 100 100" width="80">
+          <path
+            class="line top"
+            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+          />
+          <path class="line middle" d="m 70,50 h -40" />
+          <path
+            class="line bottom"
+            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+          />
+        </svg>
+      </header>
+      <nav class="nav">
+        <menu>
+          <div class="hamburguer">
+            <img
+              id="upload"
+              class="mask"
+              src="images/upload-photo.svg"
+              alt=""
+            />
+            <img class="border" src="images/border-photo.svg" alt="" />
+            <input id="photo" type="file" name="photo" accept="image/*" />
+          </div>
+          <a href="myprofile.html">
+            <img src="images/ico-profile.svg" alt="" />
+            My profile
+          </a>
+          <a href="dashboard.html">
+            <img src="images/ico-dashboard.svg" alt="" />
+            Dashboard
+          </a>
+          <a href="catalogue.html">
+            <img src="images/ico-logout.svg" alt="" />
+            Logout
+          </a>
+        </menu>
+      </nav>
+      <section class="scroll">
+        <form action="dashboard.html" method="get">
+          <div class="form-group">
+            <img
+              id="upload"
+              class="mask"
+              src="images/Image-Welcome.png"
+              alt=""
+            />
+            <img class="border" src="images/border-photo.svg" alt="" />
+            <input id="photo" type="file" name="photo" accept="image/*" />
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label> Fullname: </label>
+              <input type="text" name="email" value="Alfonso" readonly />
+            </div>
+            <div class="form-group">
+              <label> Email: </label>
+              <input
+                type="email"
+                name="email"
+                value="alfonso@gmail.com"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label> Phone Number: </label>
+              <input type="text" name="phone" value="3102457896" readonly />
+            </div>
+            <div class="form-group">
+              <label> Birth Date: </label>
+              <input type="text" name="birthdate" value="20/02/2025" readonly />
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('header').on('click', '.btn-burger', function () {
-                $(this).toggleClass('active')
-                $('.nav').toggleClass('active')
-            })
+      $(document).ready(function () {
+        $("header").on("click", ".btn-burger", function () {
+          $(this).toggleClass("active");
+          $(".nav").toggleClass("active");
+        });
 
-            $togglePass = false
-            $('section').on('click', '.ico-eye', function () {
-                !$togglePass ? $(this).next().attr('type', 'text')
-                            : $(this).next().attr('type', 'password')
-                !$togglePass ? $(this).attr('src', 'images/ico-eye-hidden.svg')
-                            : $(this).attr('src', 'images/ico-eye.svg')
-                $togglePass = !$togglePass
-            })
+        $togglePass = false;
+        $("section").on("click", ".ico-eye", function () {
+          !$togglePass
+            ? $(this).next().attr("type", "text")
+            : $(this).next().attr("type", "password");
+          !$togglePass
+            ? $(this).attr("src", "images/ico-eye-hidden.svg")
+            : $(this).attr("src", "images/ico-eye.svg");
+          $togglePass = !$togglePass;
+        });
 
-            $('.border').click(function (e) {
-                $('#photo').click()
-            })
-            $('#photo').change(function (e) {
-                e.preventDefault()
-                let reader = new FileReader()
-                reader.onload = function(evt) {
-                    $('#upload').attr('src', event.target.result)
-                }
-                reader.readAsDataURL(this.files[0])
-            })
-        })
+        $(".border").click(function (e) {
+          $("#photo").click();
+        });
+        $("#photo").change(function (e) {
+          e.preventDefault();
+          let reader = new FileReader();
+          reader.onload = function (evt) {
+            $("#upload").attr("src", event.target.result);
+          };
+          reader.readAsDataURL(this.files[0]);
+        });
+      });
     </script>
-</body>
-
+  </body>
 </html>
