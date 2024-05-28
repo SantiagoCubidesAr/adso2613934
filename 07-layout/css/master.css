@@ -203,7 +203,7 @@ main.welcome {
             justify-content: space-between;
 
             button {
-                transition: transform 0.2s ease-in;
+                transition: transform 0.2s ;
 
                 span {
                     display: flex;
@@ -488,6 +488,17 @@ main.my-profile{
                         opacity: 0.6;
                     }
                 }
+                textarea {
+                    border: none;
+                    background: url(../images/bg-descripcion.svg) no-repeat center;
+                    outline: none;
+                    font-size: 18px;
+                    height: 224px;
+                    width: 344px;
+                    padding: 3rem 3rem 3rem 3rem;
+                    flex-wrap: wrap;
+                    scrollbar-width: none;
+                }
                 img.ico-eye {
                     cursor: pointer;
                     position: absolute;
@@ -546,27 +557,14 @@ main.dashboard {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    nav.nav{
-    menu {
-        div {
-        img.mask {
-            mask-image: url(../images/shape-photo.svg);
-            mask-repeat: no-repeat;
-            mask-position: center top;
-            object-fit: cover;
-            align-self: center;
-            height: 208px;
-            width: 208px;
+    header {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        .btn-back {
+            visibility: hidden;
+            pointer-events: none;
         }
-        .border {
-            cursor: pointer;
-            position: absolute;
-        }
-        #photo {
-            display: none;
-        }
-        }
-    }
     }
     section {
         display: flex;
@@ -626,8 +624,8 @@ main.users  {
             margin-top: 0;
             .border {
                 position: absolute;
-                left: 14px;
-                top: 9px;
+                left: 45px;
+                top: 40px;
             }
             .mask {
                 mask-image: url(../images/shape-photo.svg);
