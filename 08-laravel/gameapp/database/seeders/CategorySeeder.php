@@ -1,0 +1,38 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
+use Illuminate\Database\Seeder;
+
+class CategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+                // Creación de categorías ficticias
+                Category::create([
+                    'name' => 'Xbox Series X',
+                    'manufacturer' => 'Microsoft',
+                    'releasedate' => '2020-11-10',
+                    'description' => 'Lorem ipsum dolor sit amet',
+                ]);
+        
+                Category::create([
+                    'name' => 'Nintendo Switch',
+                    'manufacturer' => 'Nintendo',
+                    'releasedate' => '2017-11-10',
+                    'description' => 'Lorem ipsum dolor sit amet',
+                ]);
+        
+                Category::create([
+                    'name' => 'Play Station 5',
+                    'manufacturer' => 'Sony',
+                    'releasedate' => '2020-11-12',
+                    'description' => 'Lorem ipsum dolor sit amet',
+                ]);
+    }
+}
