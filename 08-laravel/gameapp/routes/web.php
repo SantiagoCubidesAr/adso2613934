@@ -15,10 +15,6 @@ Route::get('view-game', function () {
     return view('view-game');
 });
 
-Route::get('login', function () {
-    return view('login');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
