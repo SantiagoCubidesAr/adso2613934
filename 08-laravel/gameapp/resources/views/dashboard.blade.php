@@ -45,7 +45,7 @@
                 <span class="rows">20 Rows</span>
             </aside>
             <img class="title" src="images/title-module-users.svg" alt="">
-            <a href="users/index.html">
+            <a href="{{ url('users') }}">
                 <img src="images/btn-enter.svg" alt="View">
             </a>
         </article>
