@@ -20,22 +20,7 @@
             d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
     </svg>
 </header>
-<nav class="nav">
-    <menu>
-        <a href="login.html">
-            <img src="images/ico-login.svg" alt="">
-            Login
-        </a>
-        <a href="register.html">
-            <img src="images/ico-register.svg" alt="">
-            Register
-        </a>
-        <a href="catalogue.html">
-            <img src="images/ico-catalogue.svg" alt="">
-            Catalogue
-        </a>
-    </menu>
-</nav>
+@include('menuburguer')
 <section>
     <img src="images/image-game.png" alt="Game">
     <article>

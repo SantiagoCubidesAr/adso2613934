@@ -45,5 +45,16 @@
         @endforeach
     </div>
 </section>
+<script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // - - - - - - - - - - - - - - -
+        $("header").on("click", ".btn-burger", function () {
+          $(this).toggleClass("active");
+          $(".nav").toggleClass("active");
+        });
+        // - - - - - - - - - - - - - - -
+      });
+    </script>
 {{ $users->links('layouts.paginator') }}
 @endsection

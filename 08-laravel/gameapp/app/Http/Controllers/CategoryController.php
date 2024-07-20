@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //$users = User::all();
-        $users = User::paginate(20);
-        return view('users.index')->with('users', $users);
+        //$users = Category::all();
+        $categories = Category::paginate(20);
+        return view('categories.index')->with('categories', $categories);
     }
 
     /**
@@ -36,7 +36,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Category $user)
     {
         //
     }
@@ -44,7 +44,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Category $user)
     {
         //
     }
@@ -52,7 +52,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Category $user)
     {
         //
     }
@@ -60,7 +60,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Category $user)
     {
         //
     }

@@ -55,7 +55,7 @@
                 <span class="rows">20 Rows</span>
             </aside>
             <img class="title" src="images/title-module-categories.svg" alt="">
-            <a href="categories/index.html">
+            <a href="{{ url('categories') }}">
                 <img src="images/btn-enter.svg" alt="View">
             </a>
         </article>
@@ -65,7 +65,7 @@
                 <span class="rows">20 Rows</span>
             </aside>
             <img class="title" src="images/title-module-games.svg" alt="">
-            <a href="games/index.html">
+            <a href="{{ url('games') }}">
                 <img src="images/btn-enter.svg" alt="View">
             </a>
         </article>

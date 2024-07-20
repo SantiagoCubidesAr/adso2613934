@@ -19,10 +19,7 @@
 
 @auth
 <nav class="nav">
-<figure class="avatar">
-    <img class="mask" src="images/image-game.png" alt="">
-    <img class="border" src="images/border-photo.svg" alt="">
-</figure>
+
 <h2>Sacarias Flores</h2>
 <h4>Admin</h4>
 <menu>
@@ -34,10 +31,13 @@
         <img src="images/ico-dashboard.svg" alt="">
         Dashboard
     </a>
-    <a href="catalogue.html">
-        <img src="images/ico-logout.svg" alt="">
+    <a href="javascript:;" onclick="logout.submit();">
+        <img src="images/ico-logout.svg" alt="Log Out">
         Logout
     </a>
+    <form id="logout" action="{{ route('logout')}}" method="post">
+        @csrf
+    </form>
 </menu>
 </nav>
 @endauth

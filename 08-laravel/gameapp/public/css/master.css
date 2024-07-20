@@ -623,7 +623,7 @@ main.users  {
             align-items: center;
             margin-top: 0;
             .border {
-                position: absolute;
+                position: relative;
                 left: 45px;
                 top: 40px;
             }
