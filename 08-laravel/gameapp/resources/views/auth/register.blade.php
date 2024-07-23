@@ -24,6 +24,12 @@
 <section class="scroll">
     <form action="{{ route('register')}}" method="post" enctype="multipart/form-data">
         @csrf
+        @csrf
+        @if(count($errors->all()) > 0)
+            @foreach($errors->all() as $message)
+                <li>{{$message}}</li>
+            @endforeach
+        @endif
         <div class="form-group">
             <img id="upload" class="mask" src="images/upload-photo.svg" alt="">
             <img  class="border" src="images/border-photo.svg" alt="">

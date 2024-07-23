@@ -16,6 +16,6 @@
 @else
 <li class="disabled" aria-disabled="true"><span>@lang('pagination.next')</span></li>
 @endif
-
+ 
 @endif
 

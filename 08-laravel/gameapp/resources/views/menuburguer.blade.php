@@ -23,7 +23,7 @@
 <h2>Sacarias Flores</h2>
 <h4>Admin</h4>
 <menu>
-    <a href="myprofile.html">
+    <a href="{{ url('my-profile') }}">
         <img src="images/ico-profile.svg" alt="">
         My profile
     </a>
