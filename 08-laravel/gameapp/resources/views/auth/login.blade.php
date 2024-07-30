@@ -71,29 +71,6 @@
                 $togglePass = !$togglePass
             })
         })
-</script>
 
-@if(count($errors->all()) > 0)
-    @php
-        $error = "";
-    @endphp
-    @foreach ($errors->all() as $message)
-        @php
-            $error.='<li>'.$message.'</li>'   
-        @endphp
-    @endforeach
-    <script>
-        $(document).ready(function() {
-            Swal.fire({
-                position: "top",
-                title: "Ops!",
-                html: '@php echo $error @endphp',
-                icon: "error",
-                toast: true,
-                showConfirmButton: false,
-                timer: 5000,
-            })
-        })
-    </script>
-@endif
+</script>
 @endsection

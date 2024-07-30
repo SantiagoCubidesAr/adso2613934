@@ -24,7 +24,6 @@
 <section class="scroll">
     <form action="{{ route('register')}}" method="post" enctype="multipart/form-data">
         @csrf
-        @csrf
         @if(count($errors->all()) > 0)
             @foreach($errors->all() as $message)
                 <li>{{$message}}</li>

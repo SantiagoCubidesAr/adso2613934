@@ -45,7 +45,8 @@
         @endforeach
     </div>
 </section>
-<script src="../js/jquery-3.7.1.min.js"></script>
+@endsection
+@section('js')
     <script>
       $(document).ready(function () {
         // - - - - - - - - - - - - - - -
