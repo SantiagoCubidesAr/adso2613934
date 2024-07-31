@@ -7,7 +7,7 @@
     <a href="javascript:;" class="btn-back">
         <img src="images/btn-back.svg" alt="Back">
     </a>
-    <img src="images/title-dashboard.svg" alt="">
+    <img src="{{ asset('images/title-dashboard.svg')}}" alt="">
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
         <path
             class="line top"
@@ -24,32 +24,32 @@
 <section>
         <article class="module">
             <aside>
-                <img class="icon" src="images/Img-User.svg" alt="">
+                <img class="icon" src="{{ asset('images/Img-User.svg')}}" alt="">
                 <span class="rows">20 Rows</span>
             </aside>
-            <img class="title" src="images/title-module-users.svg" alt="">
+            <img class="title" src="{{ asset('images/title-module-users.svg')}}" alt="">
             <a href="{{ url('users') }}">
-                <img src="images/btn-enter.svg" alt="View">
+                <img src="{{ asset('images/btn-enter.svg')}}" alt="View">
             </a>
         </article>
         <article class="module">
             <aside>
-                <img class="icon" src="images/Img-Categories.svg" alt="">
+                <img class="icon" src="{{ asset('images/Img-Categories.svg')}}" alt="">
                 <span class="rows">20 Rows</span>
             </aside>
-            <img class="title" src="images/title-module-categories.svg" alt="">
+            <img class="title" src="{{ asset('images/title-module-categories.svg')}}" alt="">
             <a href="{{ url('categories') }}">
-                <img src="images/btn-enter.svg" alt="View">
+                <img src="{{ asset('images/btn-enter.svg')}}" alt="View">
             </a>
         </article>
         <article class="module">
             <aside>
-                <img class="icon" src="images/Img-Games.svg" alt="">
+                <img class="icon" src="{{ asset('images/Img-Games.svg')}}" alt="">
                 <span class="rows">20 Rows</span>
             </aside>
-            <img class="title" src="images/title-module-games.svg" alt="">
+            <img class="title" src="{{ asset('images/title-module-games.svg')}}" alt="">
             <a href="{{ url('games') }}">
-                <img src="images/btn-enter.svg" alt="View">
+                <img src="{{ asset('images/btn-enter.svg')}}" alt="View">
             </a>
         </article>
 </section>

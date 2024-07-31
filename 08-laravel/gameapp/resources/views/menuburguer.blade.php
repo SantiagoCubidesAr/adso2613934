@@ -24,15 +24,15 @@
 <h4>Admin</h4>
 <menu>
     <a href="{{ url('my-profile') }}">
-        <img src="images/ico-profile.svg" alt="">
+        <img src="{{ asset('images/ico-profile.svg')}}" alt="">
         My profile
     </a>
     <a href="{{ url('dashboard') }}">
-        <img src="images/ico-dashboard.svg" alt="">
+        <img src="{{ asset('images/ico-dashboard.svg')}}" alt="">
         Dashboard
     </a>
     <a href="javascript:;" onclick="logout.submit();">
-        <img src="images/ico-logout.svg" alt="Log Out">
+        <img src="{{ asset('images/ico-logout.svg')}}" alt="Log Out">
         Logout
     </a>
     <form id="logout" action="{{ route('logout')}}" method="post">

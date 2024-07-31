@@ -5,9 +5,9 @@
 @section('content')
 <header>
     <a href="{{ url('/')}}" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg')}}" alt="Back">
     </a>
-    <img src="images/logo-top.svg" alt="Logo" class="logo-top">
+    <img src="{{ asset('images/logo-top.svg')}}" alt="Logo" class="logo-top">
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
         <path
             class="line top"
@@ -22,30 +22,27 @@
 </header>
 @include('menuburguer')
 <section class="scroll">
-    <form action="" method="post">
-        <input type="text" placeholder="Filter" maxlength="18">
-    </form>
     <article>
         <h2>
-            <img src="images/ico-category.svg" alt="Category">Play Station
+            <img src="{{ asset('images/ico-category.svg')}}" alt="Category">Play Station
         </h2>
         <div class="owl-carousel owl-theme">
             <figure>
-                <img src="images/slide-c1-01.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-01.png')}}" alt="" class="slide">
                 <figcaption>Fc24</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
                 </a>
             </figure>
             <figure>
-                <img src="images/slide-c1-02.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-02.png')}}" alt="" class="slide">
                 <figcaption>Warzone</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
                 </a>
             </figure>
             <figure>
-                <img src="images/slide-c1-03.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-03.png')}}" alt="" class="slide">
                 <figcaption>Halo</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
@@ -59,21 +56,21 @@
         </h2>
         <div class="owl-carousel owl-theme">
             <figure>
-                <img src="images/slide-c1-01.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-01.png')}}" alt="" class="slide">
                 <figcaption>Fc24</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
                 </a>
             </figure>
             <figure>
-                <img src="images/slide-c1-02.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-02.png')}}" alt="" class="slide">
                 <figcaption>Warzone</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
                 </a>
             </figure>
             <figure>
-                <img src="images/slide-c1-03.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-03.png')}}" alt="" class="slide">
                 <figcaption>Halo</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
@@ -83,25 +80,25 @@
     </article>
     <article>
         <h2>
-            <img src="images/ico-category.svg" alt="Category">Nintendo
+            <img src="{{ asset('images/ico-category.svg')}}" alt="Category">Nintendo
         </h2>
         <div class="owl-carousel owl-theme">
             <figure>
-                <img src="images/slide-c1-01.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-01.png')}}" alt="" class="slide">
                 <figcaption>Fc24</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
                 </a>
             </figure>
             <figure>
-                <img src="images/slide-c1-02.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-02.png')}}" alt="" class="slide">
                 <figcaption>Warzone</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
                 </a>
             </figure>
             <figure>
-                <img src="images/slide-c1-03.png" alt="" class="slide">
+                <img src="{{ asset('images/slide-c1-03.png')}}" alt="" class="slide">
                 <figcaption>Halo</figcaption>
                 <a href="{{ asset('view-game')}}" class="btn-more">
                     view
