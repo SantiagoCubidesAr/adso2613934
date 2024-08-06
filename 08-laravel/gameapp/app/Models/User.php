@@ -60,4 +60,10 @@ class User extends Authenticatable
     public function collections() {
         return $this->hasMany('App\Models\Collection');
     }
+
+    public function scopeNames($users, $q) {
+        if (trim($q)) {
+            $users->where('fullname', 'LIKE', "%$q%")->orWhere('email', 'LIKE', "%$q%");
+        }
+    }
 }

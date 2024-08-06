@@ -5,7 +5,7 @@
 @section('content')
 <header>
     <a href="{{ url('dashboard') }}" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg')}}" alt="Back">
     </a>
     <h1>My Profile</h1>
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
@@ -17,30 +17,30 @@
 @include('menuburguer')
 <section>
             <figure class="avatar" >
-                <img class="mask" src="images/image-game.png" alt="Photo">
-                <img class="border" src="images/border-photo.svg" alt="border">
+                <img class="mask" src="{{ asset('images/image-game.png')}}" alt="Photo">
+                <img class="border" src="{{ asset('images/border-photo.svg')}}" alt="border">
             </figure>
             <h2>Sacarias Flores</h2>
             <span class="email"><b>sacarias@gmail.com</b></span>
             <span class="role">
-                <img src="images/ico-role.svg" alt="role">
+                <img src="{{ asset('images/ico-role.svg')}}" alt="role">
                 <b>Administrador</b>
             </span>
             <div class="grid">
                 <span class="data data-address">
-                    <img src="images/ico-data-address.svg" alt="Address">
+                    <img src="{{ asset('images/ico-data-address.svg')}}" alt="Address">
                     <b>Str 16A # 3-64</b>
                 </span>
                 <span class="data data-phone-number">
-                    <img src="images/ico-data-phone-number.svg" alt="Phone Number">
+                    <img src="{{ asset('images/ico-data-phone-number.svg')}}" alt="Phone Number">
                     <b>3147348430</b>
                 </span>
                 <span class="data data-birth-date">
-                    <img src="images/data-birth-date.svg" alt="Birth Date">
+                    <img src="{{ asset('images/data-birth-date.svg')}}" alt="Birth Date">
                     <b>14/06/1989</b>
                 </span>
                 <span class="data data-gender">
-                    <img src="images/ico-data-gender.svg" alt="Gender">
+                    <img src="{{ asset('images/ico-data-gender.svg')}}" alt="Gender">
                     <b>Female</b>
                 </span>
             </div>

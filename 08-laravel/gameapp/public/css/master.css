@@ -4,11 +4,11 @@
 :root {
     --ff-heading: "Poppins", sans-serif;
     --ff-body: "Poly", serif;
-    --color-first: #2155CD;
-    --color-second: #E8F9FD;
-    --color-third: #0AA1DD;
-    --color-fourth: #79DAE8;
-    --color-fifth: #1E1E1E;
+    --color-first: #2155cd;
+    --color-second: #e8f9fd;
+    --color-third: #0aa1dd;
+    --color-fourth: #79dae8;
+    --color-fifth: #1e1e1e;
 }
 /* - - - - - - - - - - - - - - - - - - - - */
 /* P R E L O A D*/
@@ -43,7 +43,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-    
+
             a:is(:link, :visited) {
                 background: url(../images/Btn-Inicio.png) no-repeat center;
                 height: 60px;
@@ -54,7 +54,7 @@ body {
                 transition: all 0.2s ease-in;
                 width: 300px;
             }
-    
+
             a:is(:hover) {
                 background: url(../images/btn-hover.png) no-repeat center;
                 transform: scale(1.02) translate(-5px);
@@ -82,8 +82,7 @@ body {
 
                 .line {
                     fill: none;
-                    transition: stroke-dasharray 400ms,
-                        stroke-dashoffset 400ms;
+                    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
                     stroke: var(--color-fourth);
                     stroke-width: 4;
                     stroke-linecap: round;
@@ -203,7 +202,7 @@ main.welcome {
             justify-content: space-between;
 
             button {
-                transition: transform 0.2s ;
+                transition: transform 0.2s;
 
                 span {
                     display: flex;
@@ -268,8 +267,6 @@ main.welcome {
             }
         }
     }
-
-    
 }
 
 /* - - - - - - - - - - - - - - - - - - - - */
@@ -277,8 +274,6 @@ main.welcome {
 /* - - - - - - - - - - - - - - - - - - - - */
 main.catalogue {
     section.scroll {
-        
-
         form {
             display: flex;
             justify-content: center;
@@ -297,7 +292,7 @@ main.catalogue {
                 width: 300px;
 
                 &::placeholder {
-                    opacity: .5;
+                    opacity: 0.5;
                     color: var(--color-first);
                 }
             }
@@ -446,7 +441,7 @@ main.view-game {
 /* - - - - - - - - - - - - - - - - - - - - */
 main.login,
 main.register,
-main.my-profile{
+main.my-profile {
     header {
         .btn-back {
             visibility: hidden;
@@ -490,7 +485,8 @@ main.my-profile{
                 }
                 textarea {
                     border: none;
-                    background: url(../images/bg-descripcion.svg) no-repeat center;
+                    background: url(../images/bg-descripcion.svg) no-repeat
+                        center;
                     outline: none;
                     font-size: 18px;
                     height: 224px;
@@ -517,7 +513,7 @@ main.my-profile{
                     width: 348px;
                     cursor: pointer;
                 }
-        
+
                 button:is(:hover) {
                     background: url(../images/btn-hover.png) no-repeat center;
                     transform: scale(1.02) translate(-5px);
@@ -532,7 +528,7 @@ main.my-profile{
                     mask-position: center top;
                     object-fit: cover;
                     align-self: center;
-                    height: 150px;
+                    height: 100px;
                     width: 150px;
                 }
                 .border {
@@ -540,9 +536,9 @@ main.my-profile{
                     position: absolute;
                     display: flex;
                     justify-content: center;
-                    left: 65px;
-                    height: 208px;
-                    width: 208px;
+                    left: 100px;
+                    height: 100px;
+                    width: 150px;
                 }
                 #photo {
                     display: none;
@@ -614,7 +610,7 @@ main.dashboard {
 /* - - - - - - - - - - - - - - - - - - - - */
 main.dashboard,
 main.my-profile,
-main.users  {
+main.users {
     nav.nav {
         align-items: center;
         gap: 0.5rem;
@@ -639,7 +635,6 @@ main.users  {
                 height: 300px;
                 width: 300px;
             }
-
         }
         h2 {
             color: var(--color-fourth);
@@ -687,7 +682,7 @@ main.my-profile {
             align-items: center;
             .border {
                 position: absolute;
-                top: -35px;
+                top: 2px;
             }
             .mask {
                 mask-image: url(../images/shape-photo.svg);
@@ -699,7 +694,6 @@ main.my-profile {
                 height: 300px;
                 width: 300px;
             }
-
         }
         h2 {
             color: var(--color-first);
@@ -708,7 +702,7 @@ main.my-profile {
             font-size: 24px;
         }
         span {
-            color: var(--color-fourth);            
+            color: var(--color-fourth);
             height: 60px;
             display: flex;
             align-items: center;
@@ -717,15 +711,14 @@ main.my-profile {
             padding-left: 0.6rem;
             font-size: 16px;
             width: 190px;
-            }
+        }
         span.data-description {
             background: url(../images/bg-description.png) no-repeat center;
             height: 100;
             width: 300;
-
         }
         span.role {
-            color: var(--color-first);            
+            color: var(--color-first);
             height: 60px;
             border-radius: 20px;
             display: flex;
@@ -745,7 +738,6 @@ main.my-profile {
             font-weight: bold;
             font-size: 18px;
             height: 20px;
-            
         }
         span.role {
             background: url(../images/bg-administrador.svg) no-repeat center;
@@ -758,8 +750,8 @@ main.my-profile {
             span {
                 background: url(../images/bg-data-odd.svg) no-repeat center;
             }
-            span:nth-child(-n+2),
-            span:nth-child(n+5) {
+            span:nth-child(-n + 2),
+            span:nth-child(n + 5) {
                 background: url(../images/bg-data-odd.svg) no-repeat center;
             }
         }
@@ -787,6 +779,26 @@ main.users {
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+
+            div#list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            input {
+                border: none;
+                border-radius: 4px;
+                margin-bottom: 1rem;
+                outline: none;
+                padding: 0.4rem;
+                transition: width 0.4s ease-in;
+                width: 40px;
+                &:focus {
+                    width: 200px;
+                }
+            }
         }
         a.add:is(:link, :visited) {
             background: url(../images/btn-add.svg) no-repeat center;
@@ -840,7 +852,6 @@ main.users {
                     height: 80px;
                     width: 80px;
                 }
-    
             }
             aside {
                 h3 {
@@ -858,7 +869,6 @@ main.users {
                     position: absolute;
                     left: 100px;
                     top: 50px;
-
                 }
             }
             figure.actions {

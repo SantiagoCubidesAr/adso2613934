@@ -52,7 +52,7 @@
     </article>
     <article>
         <h2>
-            <img src="images/ico-category.svg" alt="Category">Xbox
+            <img src="{{ asset('images/ico-category.svg')}}" alt="Category">Xbox
         </h2>
         <div class="owl-carousel owl-theme">
             <figure>

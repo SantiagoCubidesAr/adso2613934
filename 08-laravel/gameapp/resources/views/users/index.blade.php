@@ -21,39 +21,50 @@
             <a class="add" href="{{ url('users/create') }}">
                 <img src="../images/content-btn-add.svg" alt="Add" />
             </a>
-            @foreach ($users as $user)
-                <article class="record">
-                    <figure class="avatar">
-                        <img class="mask" src="../images/photo.jpg" alt="Photo" />
-                        <img class="border" src="../images/border-small.svg" alt="Border" />
-                    </figure>
-                    <aside>
-                        <h3>{{ $user->fullname }}</h3>
-                        <h4>{{ $user->role }}</h4>
-                    </aside>
-                    <figure class="actions">
-                        <a href="{{ url('users/' . $user->id) }}">
-                            <img src="../images/ico-search.svg" alt="Show" />
-                        </a>
-                        <a href="{{ url('users/' . $user->id . '/edit') }}">
-                            <img src="../images/ico-edit.svg" alt="Edit" />
-                        </a>
-                        <a href="javascript:;" class="delete" data-fullname="{{ $user->fullname }}">
-                            <img src="{{ asset('images/ico-trash.svg') }}" alt="Delete" />
-                        </a>
-                        <form action="{{ url('users/' . $user->id) }}" method="post" style="display: none">
-                            @csrf
-                            @method('delete')
-                        </form>
-                    </figure>
-                </article>
-            @endforeach
+            <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
+
+            <div id="list">
+                @foreach ($users as $user)
+                    <article class="record">
+                        <figure class="avatar">
+                            <img class="mask" src="../images/photo.jpg" alt="Photo" />
+                            <img class="border" src="../images/border-small.svg" alt="Border" />
+                        </figure>
+                        <aside>
+                            <h3>{{ $user->fullname }}</h3>
+                            <h4>{{ $user->role }}</h4>
+                        </aside>
+                        <figure class="actions">
+                            <a href="{{ url('users/' . $user->id) }}">
+                                <img src="../images/ico-search.svg" alt="Show" />
+                            </a>
+                            <a href="{{ url('users/' . $user->id . '/edit') }}">
+                                <img src="../images/ico-edit.svg" alt="Edit" />
+                            </a>
+                            <a href="javascript:;" class="delete" data-fullname="{{ $user->fullname }}">
+                                <img src="{{ asset('images/ico-trash.svg') }}" alt="Delete" />
+                            </a>
+                            <form action="{{ url('users/' . $user->id) }}" method="post" style="display: none">
+                                @csrf
+                                @method('delete')
+                            </form>
+                        </figure>
+                    </article>
+                @endforeach
+            </div>
         </div>
     </section>
     {{ $users->links('layouts.paginator') }}
 @endsection
 @section('js')
     <script>
+        $(document).ready(function() {
+            $('header').on('click', '.btn-burger', function() {
+                $(this).toggleClass('active')
+                $('.nav').toggleClass('active')
+            })
+        })
+
         $('figure').on('click', '.delete', function() {
             $fullname = $(this).attr('data-fullname')
 
@@ -70,6 +81,22 @@
                     $(this).next().submit()
                 }
             });
+        })
+
+        $('body').on('keyup', '#qsearch', function(e) {
+            e.preventDefault()
+            $query = $(this).val()
+            $token = $('input[name=_token]').val()
+            $model = 'users'
+
+            $.post($model + '/search', {
+                    q: $query,
+                    _token: $token
+                },
+                function(data) {
+                    $('#list').html(data)
+                }
+            )
         })
     </script>
 @endsection
