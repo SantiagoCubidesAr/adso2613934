@@ -63,14 +63,14 @@
                 <label>
                     Password:
                 </label>
-                <img class="ico-eye" src="images/ico-eye.svg" alt="">
+                <img class="ico-eye" src="{{ asset('images/ico-eye.svg') }}" alt="">
                 <input type="password" name="password" placeholder="dontmesswithmydog">
             </div>
             <div class="form-group">
                 <label>
                     Confirm Password:
                 </label>
-                <img class="ico-eye" src="images/ico-eye.svg" alt="">
+                <img class="ico-eye" src="{{ asset('images/ico-eye.svg') }}" alt="">
                 <input type="password" name="password_confirmation" placeholder="dontmesswithmydog">
             </div>
             <div class="form-group">

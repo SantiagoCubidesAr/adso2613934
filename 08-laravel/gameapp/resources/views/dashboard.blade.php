@@ -5,7 +5,7 @@
 @section('content')
 <header>
     <a href="javascript:;" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg')}}" alt="Back">
     </a>
     <img src="{{ asset('images/title-dashboard.svg')}}" alt="">
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">

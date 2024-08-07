@@ -5,9 +5,9 @@
 @section('content')
 <header>
     <a href="javascript:;" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg') }}" alt="Back">
     </a>
-    <img src="images/title-login.svg" alt="">
+    <img src="{{ asset('images/title-login.svg') }}" alt="">
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
         <path
             class="line top"
@@ -31,22 +31,22 @@
         @endif
         <div class="form-group">
             <label>
-                <img src="images/ico-email.svg" alt="">
+                <img src="{{ asset('images/ico-email.svg') }}" alt="">
                 Email:
             </label>
             <input type="email" name="email" placeholder="alfonso@gmail.com">
         </div>
         <div class="form-group">
             <label>
-                <img src="images/ico-pass.svg" alt="">
+                <img src="{{ asset('images/ico-pass.svg') }}" alt="">
                 Password:
             </label>
-            <img class="ico-eye" src="images/ico-eye.svg" alt="">
+            <img class="ico-eye" src="{{ asset('images/ico-eye.svg') }}" alt="">
             <input type="password" name="password" placeholder="dontmesswithmydog">
         </div>
         <div class="form-group">
             <button type="submit">
-                <img src="images/content-btn-login.png" alt="Login">
+                <img src="{{ asset('images/content-btn-login.png') }}" alt="Login">
             </button>
             <a href="">Forgot your password</a>
         </div>

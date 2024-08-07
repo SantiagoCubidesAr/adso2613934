@@ -5,7 +5,7 @@
 @section('content')
     <header>
         <a class="btn-back" href="{{ url('dashboard') }}">
-            <img src="../images/btn-back.svg" alt="Back" />
+            <img src="{{ asset('images/btn-back.svg') }}" alt="Back" />
         </a>
         <h1>Users</h1>
         <svg class="btn-burger" viewBox="0 0 100 100" width="80">
@@ -19,16 +19,25 @@
     <section>
         <div class="area">
             <a class="add" href="{{ url('users/create') }}">
-                <img src="../images/content-btn-add.svg" alt="Add" />
+                <img src="{{ asset('images/content-btn-add.svg') }}" alt="Add" />
             </a>
-            <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
+            <div>
+                <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
+                <a href="{{ url('export/users/pdf') }}">
+                    <img src="{{ asset('images/btn-export-pdf.svg') }}" alt="PDF">
+                </a>
+                <a href="{{ url('export/users/excel') }}">
+                    <img src="{{ asset('images/btn-export-excel.svg') }}" alt="Excel">
+                </a>    
+            </div>
+
 
             <div id="list">
                 @foreach ($users as $user)
                     <article class="record">
                         <figure class="avatar">
-                            <img class="mask" src="../images/photo.jpg" alt="Photo" />
-                            <img class="border" src="../images/border-small.svg" alt="Border" />
+                            <img class="mask" src="{{ asset('images/photo.jpg') }}" alt="Photo" />
+                            <img class="border" src="{{ asset('images/border-small.svg') }}" alt="Border" />
                         </figure>
                         <aside>
                             <h3>{{ $user->fullname }}</h3>
@@ -36,10 +45,10 @@
                         </aside>
                         <figure class="actions">
                             <a href="{{ url('users/' . $user->id) }}">
-                                <img src="../images/ico-search.svg" alt="Show" />
+                                <img src="{{ asset('images/ico-search.svg') }}" alt="Show" />
                             </a>
                             <a href="{{ url('users/' . $user->id . '/edit') }}">
-                                <img src="../images/ico-edit.svg" alt="Edit" />
+                                <img src="{{ asset('images/ico-edit.svg') }}" alt="Edit" />
                             </a>
                             <a href="javascript:;" class="delete" data-fullname="{{ $user->fullname }}">
                                 <img src="{{ asset('images/ico-trash.svg') }}" alt="Delete" />

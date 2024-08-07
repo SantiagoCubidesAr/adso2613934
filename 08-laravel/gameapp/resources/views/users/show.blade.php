@@ -4,7 +4,7 @@
 @section('content')
         <header>
             <a href="{{ url('users') }}" class="btn-back">
-                <img src="../images/btn-back.svg" alt="Back">
+                <img src="{{ asset('images/btn-back.svg') }}" alt="Back">
             </a>
             <h1>My Profile</h1>
             <svg class="btn-burger" viewBox="0 0 100 100" width="80">
@@ -22,26 +22,26 @@
         @include('menuburguer')
         <section>
             <figure class="avatar" >
-                <img class="mask" src="../images/photo.jpg" alt="Photo">
-                <img class="border" src="../images/border-photo.svg" alt="border">
+                <img class="mask" src="{{ asset('images/photo.jpg') }}" alt="Photo">
+                <img class="border" src="{{ asset('images/border-photo.svg') }}" alt="border">
             </figure>
             <h2>{{ $user->fullname }}</h2>
             <span class="email"><b>{{ $user->email }}</b></span>
             <span class="role">
-                <img src="../images/ico-role.svg" alt="role">
+                <img src="{{ asset('images/ico-role.svg') }}" alt="role">
                 <b>{{ $user->role }}</b>
             </span>
             <div class="grid">
                 <span class="data data-phone-number">
-                    <img src="../images/ico-data-phone-number.svg" alt="Phone Number">
+                    <img src="{{ asset('images/ico-data-phone-number.svg') }}" alt="Phone Number">
                     <b>{{ $user->phone }}</b>
                 </span>
                 <span class="data data-birth-date">
-                    <img src="../images/data-birth-date.svg" alt="Birth Date">
+                    <img src="{{ asset('images/data-birth-date.svg') }}" alt="Birth Date">
                     <b>{{ $user->birthdate }}</b>
                 </span>
                 <span class="data data-gender">
-                    <img src="../images/ico-data-gender.svg" alt="Gender">
+                    <img src="{{ asset('images/ico-data-gender.svg') }}" alt="Gender">
                     <b>{{ $user->gender }}</b>
                 </span>
             </div>
