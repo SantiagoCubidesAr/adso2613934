@@ -33,19 +33,19 @@
             <label>
                 Document:
             </label>
-            <input type="number" name="document" placeholder="648454 ">
+            <input type="number" name="document" placeholder="648454" value="old{{old('document')}}">
         </div>
         <div class="form-group">
             <label>
                 Fullname:
             </label>
-            <input type="text" name="fullname" placeholder="Alfonso">
+            <input type="text" name="fullname" placeholder="Alfonso" value="{{old('fullname')}}">
         </div>
         <div class="form-group">
             <label>
                 Gender:
             </label>
-            <input type="text" name="gender" placeholder="Masculino" value="{{ old('gender')}}">
+            <input type="text" name="gender" placeholder="Male" value="{{ old('gender')}}">
         </div>
         <div class="form-group">
             <label>
