@@ -5,9 +5,9 @@
 @section('content')
 <header>
     <a href="javascript:;" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg')}}" alt="Back">
     </a>
-    <img src="images/title-register.svg" alt="">
+    <img src="{{ asset('images/title-register.svg')}}" alt="">
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
         <path
             class="line top"
@@ -24,9 +24,14 @@
 <section class="scroll">
     <form action="{{ route('register')}}" method="post" enctype="multipart/form-data">
         @csrf
+        @if(count($errors->all()) > 0)
+            @foreach($errors->all() as $message)
+                <li>{{$message}}</li>
+            @endforeach
+        @endif
         <div class="form-group">
-            <img id="upload" class="mask" src="images/upload-photo.svg" alt="">
-            <img  class="border" src="images/border-photo.svg" alt="">
+            <img id="upload" class="mask" src="{{ asset('images/upload-photo.svg')}}" alt="">
+            <img  class="border" src="{{ asset('images/border-photo.svg')}}" alt="">
             <input id="photo" type="file" name="photo" accept="image/*">
         </div>
         <div class="form-group">
@@ -69,19 +74,19 @@
             <label>
                 Password:
             </label>
-            <img class="ico-eye" src="images/ico-eye.svg" alt="">
+            <img class="ico-eye" src="{{ asset('images/ico-eye.svg')}}" alt="">
             <input type="password" name="password" placeholder="dontmesswithmydog">
         </div>
         <div class="form-group">
             <label>
                 Confirm Password:
             </label>
-            <img class="ico-eye" src="images/ico-eye.svg" alt="">
+            <img class="ico-eye" src="{{ asset('images/ico-eye.svg')}}" alt="">
             <input type="password" name="password_confirmation" placeholder="dontmesswithmydog">
         </div>
         <div class="form-group">
             <button type="submit">
-                <img src="images/content-btn-register.svg" alt="Login">
+                <img src="{{ asset('images/content-btn-register.svg')}}" alt="Login">
             </button>
         </div>
     </form>

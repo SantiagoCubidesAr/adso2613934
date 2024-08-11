@@ -5,7 +5,7 @@
 @section('content')
 <header>
     <a href="{{ asset('/catalogue')}}" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg')}}" alt="Back">
     </a>
     <h1>Halo 2</h1>
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
@@ -22,7 +22,7 @@
 </header>
 @include('menuburguer')
 <section>
-    <img src="images/image-game.png" alt="Game">
+    <img src="{{ asset('images/image-game.png')}}" alt="Game">
     <article>
         <div class="row">
             <div class="column">
@@ -48,7 +48,7 @@
     </article>
     <footer>
         <a href="{{ asset('view-game')}}">
-            <img src="images/content-btn-collection.svg" alt="">
+            <img src="{{ asset('images/content-btn-collection.svg')}}" alt="">
         </a>
     </footer>
 </section>

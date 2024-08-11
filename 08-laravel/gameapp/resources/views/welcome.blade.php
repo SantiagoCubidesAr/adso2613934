@@ -4,7 +4,7 @@
 
 @section('content')
 <header>
-    <img src="images/logo-top.svg" alt="Logo">
+    <img src="{{ asset('images/logo-top.svg')}}" alt="Logo">
 </header>
 <section class="owl-carousel owl-theme">
     <img src="{{ asset('images/Image-Welcome.png')}}" alt="slide01">

@@ -1,50 +1,3 @@
-{{-- <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout> --}}
 @extends('layouts.app')
 @section('title', 'CuboGame - login')
 @section('class', 'login')
@@ -52,9 +5,9 @@
 @section('content')
 <header>
     <a href="javascript:;" class="btn-back">
-        <img src="images/btn-back.svg" alt="Back">
+        <img src="{{ asset('images/btn-back.svg') }}" alt="Back">
     </a>
-    <img src="images/title-login.svg" alt="">
+    <img src="{{ asset('images/title-login.svg') }}" alt="">
     <svg class="btn-burger" viewBox="0 0 100 100" width="80">
         <path
             class="line top"
@@ -71,24 +24,29 @@
 <section>
     <form action="{{ route('login')}}" method="post">
         @csrf
+        @if(count($errors->all()) > 0)
+            @foreach($errors->all() as $message)
+                <li>{{$message}}</li>
+            @endforeach
+        @endif
         <div class="form-group">
             <label>
-                <img src="images/ico-email.svg" alt="">
+                <img src="{{ asset('images/ico-email.svg') }}" alt="">
                 Email:
             </label>
             <input type="email" name="email" placeholder="alfonso@gmail.com">
         </div>
         <div class="form-group">
             <label>
-                <img src="images/ico-pass.svg" alt="">
+                <img src="{{ asset('images/ico-pass.svg') }}" alt="">
                 Password:
             </label>
-            <img class="ico-eye" src="images/ico-eye.svg" alt="">
+            <img class="ico-eye" src="{{ asset('images/ico-eye.svg') }}" alt="">
             <input type="password" name="password" placeholder="dontmesswithmydog">
         </div>
         <div class="form-group">
             <button type="submit">
-                <img src="images/content-btn-login.png" alt="Login">
+                <img src="{{ asset('images/content-btn-login.png') }}" alt="Login">
             </button>
             <a href="">Forgot your password</a>
         </div>
@@ -113,29 +71,6 @@
                 $togglePass = !$togglePass
             })
         })
-</script>
 
-@if(count($errors->all()) > 0)
-    @php
-        $error = "";
-    @endphp
-    @foreach ($errors->all() as $message)
-        @php
-            $error.='<li>'.$message.'</li>'   
-        @endphp
-    @endforeach
-    <script>
-        $(document).ready(function() {
-            Swal.fire({
-                position: "top",
-                title: "Ops!",
-                html: '@php echo $error @endphp',
-                icon: "error",
-                toast: true,
-                showConfirmButton: false,
-                timer: 5000,
-            })
-        })
-    </script>
-@endif
+</script>
 @endsection

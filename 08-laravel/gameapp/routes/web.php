@@ -18,6 +18,10 @@ Route::get('view-game', function () {
     return view('view-game');
 });
 
+Route::get('my-profile', function () {
+    return view('my-profile');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -32,5 +36,12 @@ Route::middleware('auth')->group(function () {
         'games' => GameController::class
     ]);
 });
+
+//search
+Route::post('users/search', [UserController::class, 'search']);
+
+//Exports
+Route::get('export/users/pdf', [UserController::class, 'pdf']);
+Route::get('export/users/excel', [UserController::class, 'excel']);
 
 require __DIR__.'/auth.php';
