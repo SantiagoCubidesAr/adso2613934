@@ -22,7 +22,7 @@
         @include('menuburguer')
         <section>
             <figure class="avatar" >
-                <img class="mask" src="{{ asset('images/photo.jpg') }}" alt="Photo">
+                <img class="mask" src="{{ asset('images'). '/' . $user->photo }}" alt="Photo">
                 <img class="border" src="{{ asset('images/border-photo.svg') }}" alt="border">
             </figure>
             <h2>{{ $user->fullname }}</h2>

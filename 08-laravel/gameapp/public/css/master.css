@@ -460,7 +460,6 @@ main.my-profile {
                 position: relative;
                 gap: 0.6rem;
                 flex-direction: column;
-                width: 348px;
                 label {
                     display: flex;
                     color: var(--color-fourth);
@@ -482,18 +481,6 @@ main.my-profile {
                         color: var(--color-third);
                         opacity: 0.6;
                     }
-                }
-                textarea {
-                    border: none;
-                    background: url(../images/bg-descripcion.svg) no-repeat
-                        center;
-                    outline: none;
-                    font-size: 18px;
-                    height: 224px;
-                    width: 344px;
-                    padding: 3rem 3rem 3rem 3rem;
-                    flex-wrap: wrap;
-                    scrollbar-width: none;
                 }
                 img.ico-eye {
                     cursor: pointer;
@@ -524,21 +511,17 @@ main.my-profile {
                     justify-content: center;
                 }
                 .mask {
+                    mask-image: url(../images/shape-photo.svg);
                     mask-repeat: no-repeat;
                     mask-position: center top;
-                    object-fit: cover;
                     align-self: center;
-                    height: 100px;
+                    position: relative;
+                    height: 150px;
                     width: 150px;
                 }
                 .border {
                     cursor: pointer;
                     position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    left: 100px;
-                    height: 100px;
-                    width: 150px;
                 }
                 #photo {
                     display: none;
@@ -628,12 +611,18 @@ main.users {
             .mask {
                 mask-image: url(../images/shape-photo.svg);
                 mask-repeat: no-repeat;
-                mask-position: center;
-                object-fit: cover;
+                mask-position: center top;
+                mask-size: cover;
                 align-self: center;
                 position: relative;
-                height: 300px;
-                width: 300px;
+                height: 150px;
+                width: 150px;
+            }
+            .border {
+                cursor: pointer;
+                position: absolute;
+                left: 1px;
+                top: 1px;
             }
         }
         h2 {

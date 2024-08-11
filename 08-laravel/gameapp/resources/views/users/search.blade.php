@@ -1,7 +1,7 @@
 @forelse ($users as $user)
 <article class="record">
     <figure class="avatar">
-        <img class="mask" src="{{ asset('images/photo.jpg') }}" alt="Photo" />
+        <img class="mask" src="{{ asset('images'). '/' . $user->photo }}" alt="Photo" />
         <img class="border" src="{{ asset('images/border-small.svg') }}" alt="Border" />
     </figure>
     <aside>

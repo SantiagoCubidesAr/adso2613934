@@ -17,31 +17,27 @@
 @include('menuburguer')
 <section>
             <figure class="avatar" >
-                <img class="mask" src="{{ asset('images/image-game.png')}}" alt="Photo">
+                <img class="mask" src="{{ asset('images').'/'.Auth::user()->photo }}" alt="Photo">
                 <img class="border" src="{{ asset('images/border-photo.svg')}}" alt="border">
             </figure>
-            <h2>Sacarias Flores</h2>
-            <span class="email"><b>sacarias@gmail.com</b></span>
+            <h2>{{ Auth::user()->fullname }}</h2>
+            <span class="email"><b>{{ Auth::user()->email }}</b></span>
             <span class="role">
                 <img src="{{ asset('images/ico-role.svg')}}" alt="role">
-                <b>Administrador</b>
+                <b>{{ Auth::user()->role }}</b>
             </span>
             <div class="grid">
-                <span class="data data-address">
-                    <img src="{{ asset('images/ico-data-address.svg')}}" alt="Address">
-                    <b>Str 16A # 3-64</b>
-                </span>
                 <span class="data data-phone-number">
                     <img src="{{ asset('images/ico-data-phone-number.svg')}}" alt="Phone Number">
-                    <b>3147348430</b>
+                    <b>{{ Auth::user()->phone }}</b>
                 </span>
                 <span class="data data-birth-date">
                     <img src="{{ asset('images/data-birth-date.svg')}}" alt="Birth Date">
-                    <b>14/06/1989</b>
+                    <b>{{ Auth::user()->birthdate }}</b>
                 </span>
                 <span class="data data-gender">
                     <img src="{{ asset('images/ico-data-gender.svg')}}" alt="Gender">
-                    <b>Female</b>
+                    <b>{{ Auth::user()->gender }}</b>
                 </span>
             </div>
         </section>
