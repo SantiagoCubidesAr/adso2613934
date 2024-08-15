@@ -22,10 +22,10 @@
                 <img src="{{ asset('images/content-btn-add.svg') }}" alt="Add" />
             </a>
             <div>
-                <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
                 <a href="{{ url('export/users/pdf') }}">
                     <img src="{{ asset('images/btn-export-pdf.svg') }}" alt="PDF">
                 </a>
+                <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
                 <a href="{{ url('export/users/excel') }}">
                     <img src="{{ asset('images/btn-export-excel.svg') }}" alt="Excel">
                 </a>    

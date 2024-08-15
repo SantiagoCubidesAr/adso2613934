@@ -6,7 +6,7 @@
             <a href="{{ url('users') }}" class="btn-back">
                 <img src="{{ asset('images/btn-back.svg') }}" alt="Back">
             </a>
-            <h1>My Profile</h1>
+            <h1>Show User</h1>
             <svg class="btn-burger" viewBox="0 0 100 100" width="80">
                 <path
                     class="line top"
