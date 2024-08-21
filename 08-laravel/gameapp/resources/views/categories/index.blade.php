@@ -23,7 +23,7 @@
 @include('menuburguer')
 <section>
         <div class="area">
-          <a class="add" href="add.html">
+          <a class="add" href="{{ url('categories/create') }}">
             <img src="{{ asset('images/content-btn-add.svg') }}" alt="Add" />
           </a>
           @foreach($categories as $category)
