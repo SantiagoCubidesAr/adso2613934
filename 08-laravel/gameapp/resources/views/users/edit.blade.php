@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'GameApp - Show User')
+@section('title', 'GameApp - Edit User')
 @section('class', 'my-profile')
 @section('content')
         <header>
@@ -91,5 +91,17 @@
             })
         //----------------------------       
         })
+
+        $('.border').click(function(e) {
+                $('#photo').click()
+            })
+            $('#photo').change(function(e) {
+                e.preventDefault()
+                let reader = new FileReader()
+                reader.onload = function(event) {
+                    $('#upload').attr('src', event.target.result)
+                };
+                reader.readAsDataURL(this.files[0])
+            })
     </script>
         @endsection

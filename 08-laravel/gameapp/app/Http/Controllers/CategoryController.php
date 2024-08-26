@@ -62,24 +62,49 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $user)
+    public function edit(Category $category)
     {
-        //
+        return view('categories.edit')->with('category', $category);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $user)
+    public function update(Request $request, Category $category)
     {
-        //
+        if ($request->hasFile('image')) {
+            if($request->hasFile('image')) {
+                $photo =time() . '.'.$request->image->extension();
+                $request->image->move(public_path('images'), $photo);
+            }
+        } else {
+            $photo = $request->originphoto;
+        }
+
+            $category->image = $photo;
+            $category->name = $request->name;
+            $category->manufacturer = $request->manufacturer;
+            $category->releasedate = $request->releasedate;
+            $category->description = $request->description;
+
+        if ($category->save()) {
+            return redirect('categories')->with('message', 'The category: '. $category->name. 'was successfully updated!');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $user)
+    public function destroy(Category $category)
     {
-        //
+        if($category->delete()) {
+            return redirect('categories')->with('message', 'The category:'. $category->name . 'was successfully deleted!');
+        }
     }
+
+    public function search(Request $request){
+        $categories = Category::names($request->q)->paginate(20);
+        return view('categories.search')->with('categories', $categories);
+    }
+
 }
