@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -32,33 +33,30 @@ class CategoryController extends Controller
     {
         //dd($request->all());
 
-        if($request->hasFile('photo')) {
-            $photo =time() . '.'.$request->photo->extension();
-            $request->photo->move(public_path('images'), $photo);
+        if($request->hasFile('image')) {
+            $photo =time() . '.'.$request->image->extension();
+            $request->image->move(public_path('images'), $photo);
         }
 
-        $user = new User;
-            $user = new User;
-            $user->document = $request->document;
-            $user->fullname = $request->fullname;
-            $user->gender = $request->gender;
-            $user->birthdate = $request->birthdate;
-            $user->photo = $photo;
-            $user->phone = $request->phone;
-            $user->email = $request->email;
-            $user->password = bcrypt($request->password);
+        $category = new Category;
+            $category = new Category;
+            $category->name = $request->name;
+            $category->manufacturer = $request->manufacturer;
+            $category->releasedate = $request->releasedate;
+            $category->description = $request->description;
+            $category->image = $photo;
 
-        if ($user->save()) {
-            return redirect('users')->with('message', 'The user: '. $user->fullname. 'was successfully added');
+        if ($category->save()) {
+            return redirect('categories')->with('message', 'The user: '. $category->name. 'was successfully added');
         }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Category $user)
+    public function show(Category $category)
     {
-        //
+        return view('categories.show')->with('category', $category);
     }
 
     /**

@@ -29,7 +29,7 @@
           @foreach($categories as $category)
           <article class="record">
             <figure class="avatar">
-              <img class="mask" src="{{ asset('images/img-categories.png') }}" alt="Photo" />
+              <img class="mask" src="{{ asset('images'). '/' . $category->image }}" alt="Photo" />
               <img
                 class="border"
                 src="{{ asset('images/border-small.svg') }}"
@@ -41,10 +41,10 @@
               
             </aside>
             <figure class="actions">
-              <a href="search.html">
+              <a href="{{ url('categories/' . $category->id) }}">
                 <img src="{{ asset('images/ico-search.svg') }}" alt="Show" />
               </a>
-              <a href="edit.html">
+              <a href="{{ url('categories/edit') }}">
                 <img src="{{ asset('images/ico-edit.svg') }}" alt="Edit" />
               </a>
               <a href="javascript:;">
