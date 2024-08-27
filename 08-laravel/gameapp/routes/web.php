@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
 
 //search
 Route::post('users/search', [UserController::class, 'search']);
+Route::post('categories/search', [CategoryController::class, 'search']);
 
 //Exports
 Route::get('export/users/pdf', [UserController::class, 'pdf']);

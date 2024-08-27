@@ -24,39 +24,46 @@
     <a class="add" href="{{ url('categories/create') }}">
       <img src="{{ asset('images/content-btn-add.svg') }}" alt="Add" />
     </a>
-    @foreach($categories as $category)
-    <article class="record">
-      <figure class="avatar">
-        <img class="mask" src="{{ asset('images'). '/' . $category->image }}" alt="Photo" />
-        <img
-          class="border"
-          src="{{ asset('images/border-small.svg') }}"
-          alt="Border" />
-      </figure>
-      <aside>
-        <h3>{{$category->name}}</h3>
-      </aside>
-      <figure class="actions">
-        <a href="{{ url('categories/' . $category->id) }}">
-          <img src="{{ asset('images/ico-search.svg') }}" alt="Show" />
-        </a>
-        <a href="{{ url('categories/' . $category->id . '/edit') }}">
-          <img src="{{ asset('images/ico-edit.svg') }}" alt="Edit" />
-        </a>
-        <a href="javascript:;" class="delete" data-name="{{ $category->name }}">
-          <img src="{{ asset('images/ico-trash.svg') }}" alt="Delete" />
-        </a>
-        <form action="{{ url('categories/' . $category->id) }}" method="post" style="display: none">
-          @csrf
-          @method('delete')
-        </form>
-      </figure>
-    </article>
-    @endforeach
+    <div>
+      <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
+    </div>
+
+    <div id="list">
+      @foreach($categories as $category)
+      <article class="record">
+        <figure class="avatar">
+          <img class="mask" src="{{ asset('images'). '/' . $category->image }}" alt="Photo" />
+          <img
+            class="border"
+            src="{{ asset('images/border-small.svg') }}"
+            alt="Border" />
+        </figure>
+        <aside>
+          <h3>{{$category->name}}</h3>
+        </aside>
+        <figure class="actions">
+          <a href="{{ url('categories/' . $category->id) }}">
+            <img src="{{ asset('images/ico-search.svg') }}" alt="Show" />
+          </a>
+          <a href="{{ url('categories/' . $category->id . '/edit') }}">
+            <img src="{{ asset('images/ico-edit.svg') }}" alt="Edit" />
+          </a>
+          <a href="javascript:;" class="delete" data-name="{{ $category->name }}">
+            <img src="{{ asset('images/ico-trash.svg') }}" alt="Delete" />
+          </a>
+          <form action="{{ url('categories/' . $category->id) }}" method="post" style="display: none">
+            @csrf
+            @method('delete')
+          </form>
+        </figure>
+      </article>
+      @endforeach
+    </div>
   </div>
-</section>
+0</section>
 {{ $categories->links('layouts.paginator') }}
-<script src="../js/jquery-3.7.1.min.js"></script>
+@endsection
+@section('js')
 <script>
   $(document).ready(function() {
     // - - - - - - - - - - - - - - -
