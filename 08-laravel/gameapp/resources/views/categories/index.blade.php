@@ -60,7 +60,7 @@
       @endforeach
     </div>
   </div>
-0</section>
+</section>
 {{ $categories->links('layouts.paginator') }}
 @endsection
 @section('js')

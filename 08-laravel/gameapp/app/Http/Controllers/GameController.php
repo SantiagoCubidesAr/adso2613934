@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -12,7 +13,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        //$users = Category::all();
+        //
         $games = Game::paginate(20);
         return view('games.index')->with('games', $games);
     }
@@ -23,6 +24,8 @@ class GameController extends Controller
     public function create()
     {
         //
+        $cats = Category::all();
+        return view('games.create')->with('cats', $cats);
     }
 
     /**
@@ -31,12 +34,31 @@ class GameController extends Controller
     public function store(Request $request)
     {
         //
+        if ($request->hasFile('image')) {
+            $photo = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $photo);
+        }
+
+        $game = new Game;
+        $game->title = $request->title;
+        $game->developer = $request->developer;
+        $game->releasedate = $request->releasedate;
+        $game->category_id = $request->category_id;
+        $game->price = $request->price;
+        $game->genre = $request->genre;
+        $game->slider = $request->slider;
+        $game->description = $request->description;
+        $game->image = $photo;
+
+        if ($game->save()) {
+            return redirect('categories')->with('message', 'The user: ' . $game->title . 'was successfully added');
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Game $user)
+    public function show(Game $game)
     {
         //
     }
@@ -44,7 +66,7 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Game $user)
+    public function edit(Game $game)
     {
         //
     }
@@ -52,7 +74,7 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Game $user)
+    public function update(Request $request, Game $game)
     {
         //
     }
@@ -60,7 +82,7 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Game $user)
+    public function destroy(Game $game)
     {
         //
     }

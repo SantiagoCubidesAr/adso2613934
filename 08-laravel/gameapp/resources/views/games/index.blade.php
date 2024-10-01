@@ -23,9 +23,19 @@
 @include('menuburguer')
 <section>
         <div class="area">
-          <a class="add" href="add.html">
+          <a class="add" href="{{ url('games/create') }}">
             <img src="{{ asset('images/content-btn-add.svg') }}" alt="Add" />
           </a>
+          <div>
+            <a href="{{ url('export/games/pdf') }}">
+                <img src="{{ asset('images/btn-export-pdf.svg') }}" alt="PDF">
+            </a>
+            <input type="text" placeholder="Search..." name="qsearch" id="qsearch">
+            <a href="{{ url('export/games/excel') }}">
+                <img src="{{ asset('images/btn-export-excel.svg') }}" alt="Excel">
+            </a>    
+        </div>
+          
         @foreach($games as $game)
         <article class="record">
             <figure class="avatar">
@@ -38,7 +48,7 @@
             </figure>
             <aside>
               <h3>{{$game->title}}</h3>
-              <h4>{{$game->genre}}</h4>
+              <h4>{{$game->category->name}}</h4>
             </aside>
             <figure class="actions">
               <a href="search.html">
