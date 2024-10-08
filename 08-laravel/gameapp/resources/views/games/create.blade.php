@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'GameApp - Create User')
+@section('title', 'GameApp - Create Game')
 @section('class', 'my-profile')
 @section('content')
     <header>
@@ -21,33 +21,34 @@
             <div class="form-group">
                 <img id="upload" class="mask" src="{{ asset('images/upload-photo.svg') }}" alt="">
                 <img class="border" src="{{ asset('images/border-photo.svg') }}" alt="">
-                <input id="photo" type="file" name="photo" accept="image/*">
+                <input id="photo" type="file" name="image" accept="image/*">
             </div>
             <div class="form-group">
                 <label>
                     Title:
                 </label>
-                <input type="text" name="title" placeholder="Masculino"">
+                <input type="text" value="{{ old('title') }}" name="title" placeholder="God of war"">
             </div>
             <div class="form-group">
                 <label>
                     Developer:
                 </label>
-                <input type="text" name="developer" placeholder="312494564">
+                <input type="text" value="{{ old('developer') }}" name="developer" placeholder="312494564">
             </div>
             <div class="form-group">
                 <label>
                     Releasedate:
                 </label>
-                <input type="text" name="releasedate" placeholder="312494564">
+                <input type="date" value="{{ old('releasedate') }}" name="releasedate" placeholder="312494564">
             </div>
             <div class="form-group">
                 <label>
                     Category:
                 </label>
-                <select name="category_id">
-                    @foreach ( $cats as $cat )
-                        <option value="{{ $cat->id }}">{{ $cat->title }}</option>
+                <select name="category_id" value="{{ old('category_id') }}">
+                    @foreach ($cats as $cat)
+                        <option value="{{ $cat->id }}" @if (old('category_id') == $cat->id) selected @endif>
+                            {{ $cat->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -55,39 +56,29 @@
                 <label>
                     Price:
                 </label>
-                <input type="number" name="price" placeholder="648454 ">
+                <input type="number" value="{{ old('price') }}" name="price" placeholder="648454 ">
             </div>
             <div class="form-group">
                 <label>
                     Genre:
                 </label>
-                <input type="number" name="genre" placeholder="648454 ">
+                <input type="text" value="{{ old('genre') }}" name="genre" placeholder="648454 ">
             </div>
             <div class="form-group">
                 <label>
-                    Genre:
+                    Slider:
                 </label>
-                <input type="email" name="genre" placeholder="gmail@gmail.com">
+                <select name="slider">
+                    <option value="">Select...</option>
+                    <option value="0" @if (old('slider') == 1) selected @endif>Inactive</option>
+                    <option value="1" @if (old('slider') == 0) selected @endif>Active</option>
+                </select>
             </div>
             <div class="form-group">
                 <label>
-                    Birth Date:
+                    Description:
                 </label>
-                <input type="text" value="{{ old('birthdate') }}" name="birthdate" placeholder="1978-12-10">
-            </div>
-            <div class="form-group">
-                <label>
-                    Password:
-                </label>
-                <img class="ico-eye" src="{{ asset('images/ico-eye.svg') }}" alt="">
-                <input type="password" name="password" placeholder="dontmesswithmydog">
-            </div>
-            <div class="form-group">
-                <label>
-                    Confirm Password:
-                </label>
-                <img class="ico-eye" src="{{ asset('images/ico-eye.svg') }}" alt="">
-                <input type="password" name="password_confirmation" placeholder="dontmesswithmydog">
+                <textarea name="description" value="{{ old('description') }}" placeholder="lorem ipsum"></textarea>
             </div>
             <div class="form-group">
                 <button type="submit">
@@ -103,15 +94,6 @@
             $('header').on('click', '.btn-burger', function() {
                 $(this).toggleClass('active')
                 $('.nav').toggleClass('active')
-            })
-
-            $togglePass = false
-            $('section').on('click', '.ico-eye', function() {
-                !$togglePass ? $(this).next().attr('type', 'text') :
-                    $(this).next().attr('type', 'password') !$togglePass ? $(this).attr('src',
-                        'images/ico-eye-hidden.svg') :
-                    $(this).attr('src', 'images/ico-eye.svg')
-                $togglePass = !$togglePass
             })
 
             $('.border').click(function(e) {

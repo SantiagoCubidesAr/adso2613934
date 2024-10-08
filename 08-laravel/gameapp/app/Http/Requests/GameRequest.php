@@ -21,8 +21,29 @@ class GameRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        if ($this->method() === 'PUT') {
+            return [
+                'title' => 'required|string|unique:games,title,'. $this->id,
+                'developer' => 'required|string',
+                'releasedate' => 'required|date',
+                'category_id' => 'required',
+                'price' => 'required|decimal:2',
+                'gender' => 'required',
+                'slider' => 'required',
+                'description' => 'required',
+            ];
+        } else {
+            return [
+                'title' => 'required|string|unique:games',
+                'image' => 'required|image',
+                'developer' => 'required|string',
+                'releasedate' => 'required|date',
+                'category_id' => 'required',
+                'price' => 'required|decimal:2',
+                'gender' => 'required',
+                'slider' => 'required',
+                'description' => 'required',
+            ];
+        }
     }
 }

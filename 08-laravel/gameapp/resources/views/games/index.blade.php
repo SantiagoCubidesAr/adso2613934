@@ -39,7 +39,7 @@
         @foreach($games as $game)
         <article class="record">
             <figure class="avatar">
-              <img class="mask" src="{{ asset('images/img-games.png') }}" alt="Photo" />
+              <img class="mask" src="{{ asset('images'). '/' . $game->image }}" alt="Photo" />
               <img
                 class="border"
                 src="{{ asset('images/border-small.svg') }}"
@@ -51,10 +51,10 @@
               <h4>{{$game->category->name}}</h4>
             </aside>
             <figure class="actions">
-              <a href="search.html">
+              <a href="{{ url('games/' . $game->id) }}">
                 <img src="{{ asset('images/ico-search.svg') }}" alt="Show" />
               </a>
-              <a href="edit.html">
+              <a href="{{ url('games/' . $game->id . '/edit') }}">
                 <img src="{{ asset('images/ico-edit.svg') }}" alt="Edit" />
               </a>
               <a href="javascript:;">

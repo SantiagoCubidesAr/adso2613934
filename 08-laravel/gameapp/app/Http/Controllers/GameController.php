@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -25,7 +26,7 @@ class GameController extends Controller
     {
         //
         $cats = Category::all();
-        return view('games.create')->with('cats', $cats);
+        return view(view:'games.create')->with(key:'cats', value:$cats);
     }
 
     /**
@@ -45,13 +46,14 @@ class GameController extends Controller
         $game->releasedate = $request->releasedate;
         $game->category_id = $request->category_id;
         $game->price = $request->price;
+        $game->user_id = Auth::user()->id;
         $game->genre = $request->genre;
         $game->slider = $request->slider;
         $game->description = $request->description;
         $game->image = $photo;
 
         if ($game->save()) {
-            return redirect('categories')->with('message', 'The user: ' . $game->title . 'was successfully added');
+            return redirect('games')->with('message', 'The user: ' . $game->title . 'was successfully added');
         }
     }
 
@@ -60,7 +62,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        return view('games.show')->with('game', $game);
     }
 
     /**
@@ -69,6 +71,10 @@ class GameController extends Controller
     public function edit(Game $game)
     {
         //
+        $cats = Category::all();
+        return view('games.edit')
+                ->with('game', $game)
+                ->with('cats', $cats);
     }
 
     /**
@@ -77,6 +83,28 @@ class GameController extends Controller
     public function update(Request $request, Game $game)
     {
         //
+
+        if ($request->hasFile('image')) {
+            $photo = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $photo);
+        } else {
+            $photo = $request->originphoto;
+        }
+
+        $game->title = $request->title;
+        $game->developer = $request->developer;
+        $game->releasedate = $request->releasedate;
+        $game->category_id = $request->category_id;
+        $game->price = $request->price;
+        $game->user_id = Auth::user()->id;
+        $game->genre = $request->genre;
+        $game->slider = $request->slider;
+        $game->description = $request->description;
+        $game->image = $photo;
+
+        if ($game->save()) {
+            return redirect('games')->with('message', 'The user: '. $game->title. 'was successfully updated!');
+        }
     }
 
     /**
