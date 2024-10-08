@@ -62,22 +62,22 @@
                 </div>
                 <div class="form-group">
                     <button type="submit">
-                        <img src="{{ asset('images/content-btn-add.svg')}}" alt="Login">
+                        <h1>Edit</h1>
                     </button>
                 </div>
             </form>
         </section>
         @endsection
         @section('js')
-    <script src="../js/jquery-3.7.1.min.js"></script>  
+    <script src="../js/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            
+
             $('header').on('click', '.btn-burger', function(){
             $(this).toggleClass('active')
             $('.nav').toggleClass('active')
             })
-        //----------------------------       
+        //----------------------------
         })
 
         $('.border').click(function(e) {

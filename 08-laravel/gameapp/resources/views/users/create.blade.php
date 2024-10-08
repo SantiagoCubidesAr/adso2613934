@@ -51,13 +51,13 @@
                 <label>
                     Phone Number:
                 </label>
-                <input type="text" value="{{ old('phone') }}" name="phone" placeholder="312494564">
+                <input type="number" value="{{ old('phone') }}" name="phone" placeholder="312494564">
             </div>
             <div class="form-group">
                 <label>
                     Birth Date:
                 </label>
-                <input type="text" value="{{ old('birthdate') }}" name="birthdate" placeholder="1978-12-10">
+                <input type="date" value="{{ old('birthdate') }}" name="birthdate" placeholder="1978-12-10">
             </div>
             <div class="form-group">
                 <label>

@@ -467,9 +467,39 @@ main.my-profile {
                     gap: 0.6rem;
                     font-size: 20px;
                 }
+                textarea{
+                    border-radius: 10px;
+                    border: 5px solid var(--color-fourth);
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: var(--color-third);
+                    text-indent: 1rem;
+                    height: 65px;
+                    width: 344px;
+                    &::placeholder {
+                        color: var(--color-third);
+                        opacity: 0.6;
+                    }
+                }
+                select {
+                    border-radius: 30px;
+                    border: 5px solid var(--color-fourth);
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: var(--color-third);
+                    text-indent: 1rem;
+                    height: 40px;
+                    width: 344px;
+                    &::placeholder {
+                        color: var(--color-third);
+                        opacity: 0.6;
+                    }
+                }
                 input {
-                    border: none;
-                    background: url(../images/input-login.png) no-repeat center;
+                    border-radius: 30px;
+                    border: 5px solid var(--color-fourth);
                     outline: none;
                     font-size: 18px;
                     font-weight: 300;
@@ -655,9 +685,10 @@ main.my-profile {
             visibility: visible;
             pointer-events: all;
         }
-        h1 {
-            color: var(--color-fourth);
-        }
+
+    }
+    h1 {
+        color: var(--color-fourth);
     }
     section {
         display: flex;
