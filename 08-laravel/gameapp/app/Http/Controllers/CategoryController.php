@@ -38,7 +38,6 @@ class CategoryController extends Controller
             $request->image->move(public_path('images'), $photo);
         }
 
-        $category = new Category;
             $category = new Category;
             $category->name = $request->name;
             $category->manufacturer = $request->manufacturer;

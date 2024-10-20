@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         schema::table('users', function (Blueprint $table){
-            $table->renameColumn('name', 'fullname');
             $table->string('gender')->after('fullname');
             $table->string('role')->default('Customer')->after('password');
         });
