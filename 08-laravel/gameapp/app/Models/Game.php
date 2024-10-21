@@ -44,7 +44,7 @@ class Game extends Model
 
     public function scopeNames($games, $q) {
         if (trim($q)) {
-            $games->where('title', 'LIKE', "%$q%");
+            $games->where('title', 'LIKE', "%$q%")->orWhere('developer', 'LIKE', "%$q%");
         }
     }
 }
