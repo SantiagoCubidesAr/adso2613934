@@ -46,4 +46,18 @@ class GameRequest extends FormRequest
             ];
         }
     }
+
+    public function messages(): array
+    {
+        return [
+            'title.required' => 'The: atribute is required'
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'title' => 'title'
+        ];
+    }
 }

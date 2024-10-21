@@ -6,7 +6,8 @@ use App\Models\Game;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use PDF;
+use App\Exports\GameExport;
 class GameController extends Controller
 {
     /**
@@ -112,6 +113,22 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+        if($game->delete()) {
+            return redirect('games')->with('message', 'The category:'. $game->title . 'was successfully deleted!');
+        }
+    }
+
+    public function search(Request $request){
+        $games = Game::names($request->q)->paginate(20);
+        return view('games.search')->with('games', $games);
+    }
+
+    public function pdf() {
+        $games = Game::all();
+        $pdf = PDF::loadView('games.pdf', compact('games'));
+        return $pdf->download('allgames.pdf');
+    }
+    public function excel() {
+        return \Excel::download(new GameExport, 'allgames.xlsx');
     }
 }
