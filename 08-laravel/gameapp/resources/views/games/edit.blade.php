@@ -84,8 +84,8 @@
             </label>
             <select name="slider">
                 <option value="">Select...</option>
-                <option value="0" @if (old('slider')==1) selected @endif>Inactive</option>
-                <option value="1" @if (old('slider')==0) selected @endif>Active</option>
+                <option value="0" @if (old('slider', $game->slider)==0) selected @endif>Inactive</option>
+                <option value="1" @if (old('slider', $game->slider)==1) selected @endif>Active</option>
             </select>
         </div>
         <div class="form-group">
