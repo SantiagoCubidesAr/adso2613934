@@ -4,9 +4,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Game;
 
 Route::get('/', function () {
-    return view('welcome');
+    $sliders = Game::where('slider', 1)->get();
+    return view('welcome')->with('sliders', $sliders);
 });
 
 Route::get('catalogue', function () {
@@ -46,5 +48,8 @@ Route::get('export/users/pdf', [UserController::class, 'pdf']);
 Route::get('export/users/excel', [UserController::class, 'excel']);
 Route::get('export/games/pdf', [GameController::class, 'pdf']);
 Route::get('export/games/excel', [GameController::class, 'excel']);
+
+//Imports
+Route::post('import/users', [UserController::class, 'import']);
 
 require __DIR__.'/auth.php';
